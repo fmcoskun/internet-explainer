@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How the internet sends a message</title>
+    <style>
+      html, body { margin: 0; height: 100%; background: #070b14; color: #d8eef6; font: 13px ui-monospace, Consolas, monospace; }
+      #stage canvas { display: block; }
+      body[data-mode='render'] { background: #000; overflow: hidden; }
+      body[data-mode='render'] #ui { display: none; }
+      body[data-mode='preview'] { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; }
+      body[data-mode='preview'] #stage canvas {
+        width: min(96vw, calc((100vh - 120px) * 16 / 9)); height: auto; aspect-ratio: 16 / 9;
+        border-radius: 8px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(56, 232, 255, 0.15);
+      }
+      #ui { width: min(96vw, calc((100vh - 120px) * 16 / 9)); }
+      #row { display: flex; align-items: center; gap: 12px; }
+      #scrub { flex: 1; accent-color: #38e8ff; }
+      #play { background: #ffb547; color: #120a00; border: 0; border-radius: 6px; padding: 6px 14px; cursor: pointer; font: inherit; font-weight: 700; }
+      #time { min-width: 150px; text-align: right; opacity: 0.8; }
+      #marks { position: relative; height: 26px; margin: 6px 82px 0 76px; }
+      #marks button {
+        position: absolute; transform: translateX(-2px); background: transparent; color: #9fdbe8;
+        border: 0; border-left: 1px solid #38e8ff; padding: 2px 6px; cursor: pointer; font: inherit; white-space: nowrap;
+      }
+      #marks button:hover { color: #fff; }
+    </style>
+  </head>
+  <body>
+    <div id="stage"></div>
+    <div id="ui">
+      <div id="row">
+        <button id="play">Play</button>
+        <input id="scrub" type="range" min="0" value="0" step="1" />
+        <span id="time">0.00s · frame 0</span>
+      </div>
+      <div id="marks"></div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
