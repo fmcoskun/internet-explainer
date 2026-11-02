@@ -3,7 +3,7 @@
 A 15-second holographic 3D explainer, "How the internet sends a message", built with Three.js and
 rendered deterministically frame by frame to 1080p60 MP4 with Playwright + ffmpeg. Made with Claude Code.
 
-![Holographic explainer preview: packets travelling across the globe](docs/explainer.gif)
+▶ [Watch the video on LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7520270813275820032/)
 
 A message from London to Tokyo is split into three numbered packets. Each one takes a different real
 route (via Frankfurt and Singapore, New York and San Francisco, or Moscow and Beijing), they arrive out of
