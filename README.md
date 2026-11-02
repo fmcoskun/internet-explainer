@@ -10,7 +10,7 @@ route (via Frankfurt and Singapore, New York and San Francisco, or Moscow and Be
 order, and Tokyo puts them back together.
 
 1920×1080 @ 60 fps, 900 frames. Every element is a pure function of a time value `t`, so the output is
-the same on every render.
+the same on every render. The whole video is generated from code; not a single frame was edited by hand.
 
 ## Scripts
 
@@ -46,3 +46,8 @@ is deleted afterwards.
 | `src/main.js` | Wiring, `window.seekTo` / `window.captureFrame`, preview UI |
 
 Fonts: SF Pro / SF Mono where installed, otherwise Segoe UI / Cascadia / Consolas.
+
+## Next
+
+The globe, routes, HUD and post-processing are independent modules, so they can move into
+React Three Fiber for an interactive, scroll-driven web version of the story.
